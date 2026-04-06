@@ -10,5 +10,9 @@ ujinslav.fun {
 
 
 mail.ujinslav.fun {
-    reverse_proxy 127.0.0.1:8080   # порт из HTTP_PORT в mailcow.conf
+    reverse_proxy localhost:9000{      # ← должен быть 8081!
+        header_up X-Forwarded-Proto https
+        header_up X-Forwarded-Host {host}
+        header_up Host {host}
+    }
 }
