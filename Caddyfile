@@ -1,0 +1,14 @@
+{
+    # Глобальные настройки
+    email ujin_slav@mail.ru          # для Let's Encrypt
+}
+
+# Главный сайт или wildcard
+ujinslav.fun {
+    reverse_proxy localhost:8080   # сюда frps кидает HTTP-трафик по subdomain'ам
+}
+
+
+mail.ujinslav.fun {
+    reverse_proxy 127.0.0.1:8080   # порт из HTTP_PORT в mailcow.conf
+}

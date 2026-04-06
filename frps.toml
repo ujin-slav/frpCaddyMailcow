@@ -1,0 +1,14 @@
+bindPort = 7000                    # порт, на который подключается frpc с дома
+vhostHTTPPort = 8080               # внутренний порт для HTTP vhost (Caddy будет проксировать сюда)
+# vhostHTTPSPort = 8443            # если нужно HTTPS через frp (обычно не нужно)
+
+# Дашборд frps (опционально)
+webServer.addr = "127.0.0.1"
+webServer.port = 7500
+webServer.user = "admin"
+webServer.password = "123456"
+
+auth.method = "token"
+auth.token = "123456"
+
+log.level = "info"
