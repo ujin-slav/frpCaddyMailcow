@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  frpc:
+    image: snowdreamtech/frpc:latest          # актуальная версия на 2026
+    container_name: frpc
+    restart: unless-stopped
+    volumes:
+      - ./frpc.toml:/etc/frp/frpc.toml:ro
+    network_mode: host                        # рекомендуется для простоты и производительности

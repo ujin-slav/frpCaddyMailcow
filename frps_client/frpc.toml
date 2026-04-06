@@ -1,0 +1,26 @@
+# ==================== Основные настройки ====================
+serverAddr = "ujinslav.fun"     # например: myvps.example.com или 123.45.67.89
+serverPort = 7000
+
+# Токен  должен быть точно такой же, как в frps.toml на VPS
+auth.method = "token"
+auth.token = "123456"
+
+# Логи
+log.level = "info"
+log.maxDays = 3
+
+# ==================== Проброс Apache ====================
+[[proxies]]
+name = "apache"
+type = "http"
+
+# Куда на домашнем ПК идёт запрос (твой Apache)
+localIP = "127.0.0.1"
+localPort = 80
+
+# Как будет доступен из интернета
+customDomains = ["ujinslav.fun"]
+
+# Опционально: можно добавить locations, если нужно только определённые пути
+# locations = ["/"]
